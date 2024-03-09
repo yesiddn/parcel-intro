@@ -1,7 +1,7 @@
 // la estructura de carpetas cambia dependiendo el empaquetador
 
 const $app = document.getElementById('app');
-const API = 'https://api.escuelajs.co/api/v1/products';
+const API = 'https://api.escuelajs.co/api/v1/products?offset=5&limit=15';
 
 const main = async () => {
   const response = await fetch(API);
@@ -11,7 +11,7 @@ const main = async () => {
     return `
       <article class="Card">
         <img src="${product.images[0]}" alt="${product.title}" />
-        <h2>${product.title} <small>$ ${product.price}</small></h2>
+        <h2>${product.title} <small>Precio $${product.price}</small></h2>
       </article>
     `
   }).join('');
